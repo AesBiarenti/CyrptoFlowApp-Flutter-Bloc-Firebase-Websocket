@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Crypto Flow — Uygulama İkonu Tasarım Brief",
+    "version": "1.0",
+    "client": "Crypto Flow App",
+    "deliverable": "App icon (iOS & Android)",
+    "usage": "ChatGPT / DALL·E / Midjourney veya profesyonel tasarımcıya brief olarak kullanılabilir."
+  },
+
+  "design_brief": {
+    "objective": "Kullanıcıların cüzdanlarında ve mağaza listelerinde güven veren, akılda kalıcı ve markayı (akış, kripto, modern fintech) yansıtan tek bir görsel kimlik oluşturmak.",
+    "target_audience": "Kripto ve yatırım uygulamaları kullanan, modern ve sade arayüzleri tercih eden kullanıcılar.",
+    "brand_attributes": [
+      "Güvenilir ve profesyonel",
+      "Akış ve hareket (flow)",
+      "Gece teması ve rahatlık",
+      "Minimal, okunabilir, ölçeklenebilir"
+    ],
+    "mood_keywords": "premium, calm, clear, flowing, nocturnal, trustworthy, minimal, fintech."
+  },
+
+  "technical_specifications": {
+    "format": "Square, 1:1 aspect ratio. Önerilen üretim: 1024×1024 px veya 2048×2048 px; sonradan 192, 512 vb. için ölçeklenecek.",
+    "safe_zone": "Ana sembol kompozisyonun merkezinde; kenarlardan en az %12–15 içeride kalacak şekilde (kırpma ve yuvarlatma payı).",
+    "background": {
+      "hex": "#131313",
+      "description": "Düz (flat), tek renk, gradient yok. Çok koyu füme, neredeyse siyah; uygulama arka plan rengi ile birebir aynı.",
+      "rgb": "rgb(19, 19, 19)"
+    },
+    "logo_color": {
+      "primary_hex": "#60A5FA",
+      "fallback_hex": "#5FA5F9",
+      "description": "Parlak gece mavisi: canlı, doygun, hafif elektrik/parıltı hissi veren mavi; ne neon ne de soluk. Twilight / gece göğü mavisi.",
+      "rgb": "rgb(96, 165, 250)"
+    },
+    "color_usage": "Logo veya sembol yalnızca bu tek mavi tonda; gölge, gradient veya ek renk yok. Arka plan sadece #131313."
+  },
+
+  "art_direction": {
+    "style": "Flat design, 2D. Vektör tarzı keskin kenarlar, yumuşak geçişler (blur) yok. İkon küçük boyutta (48×48, 96×96) okunaklı kalmalı; ince detaylar ve karmaşık dokular kullanılmamalı.",
+    "composition": "Merkez hizalı, dengeli negatif alan. Simetri veya güçlü optik denge tercih edilir.",
+    "conceptual_direction": "Akış (flow), yukarı hareket veya büyüme; kripto/para/fintech ile ilişkilendirilebilecek soyut veya yarı-soyut form. Örnek yönler: tek bir akışkan çizgi, stilize dalga, yukarı bakan ok, minimal coin/daire ile hareket birleşimi, veya 'C' / 'F' harfi olmadan sadece form ile akış hissi.",
+    "references_tone": "Apple Finance, Stripe, Revolut, Coinbase vb. uygulama ikonlarının minimal, tek sembol odaklı ve güven veren dili; ama kendi renk ve akış konseptiyle."
+  },
+
+  "prompts": {
+    "master_prompt_english": "Professional app icon design, square 1:1, 1024px. Art direction: flat, vector-style, minimal fintech icon. Background: single solid color exactly #131313 (RGB 19,19,19), no gradient, no texture, no vignette. Foreground: one centered symbol or logo in a single color — bright night blue, hex #60A5FA, luminous and saturated, with a subtle sense of glow or clarity (not neon, not dull). The symbol should communicate flow, upward motion, or currency/crypto: e.g. a single flowing line or curve, a stylized wave, a minimal upward arrow, or an abstract mark combining circle/coin with motion. Clean edges, no blur, no shadows, no 3D. No text, no letters, no words. Composition: centered, with balanced negative space; the mark occupies roughly 55–70% of the canvas width so it remains legible when scaled down to 192px or 48px. Style: premium, calm, trustworthy; suitable for iOS and Android app stores. High contrast between #131313 and #60A5FA for accessibility and readability at small sizes.",
+
+    "concept_a_flow_line": "App icon, 1:1, flat design. Background solid #131313. Single continuous flowing line or curve in bright night blue (#60A5FA), suggesting movement and flow, centered on a #131313 background. No other elements, no text, no gradients. Minimal, premium fintech feel. Vector-sharp, readable at 48px.",
+
+    "concept_b_abstract_coin_motion": "App icon, square, minimal. Background #131313. One abstract symbol in #60A5FA: a circle or coin shape merged with an upward motion element (e.g. arrow, wave, or rising curve). Single color, flat, centered. No text, no 3D, no shadows. Professional crypto/fintech app icon, clear at small sizes.",
+
+    "concept_c_wave_crescent": "App icon, 1:1. Solid #131313 background. A single stylized wave or crescent in bright night blue (#60A5FA), suggesting flow and growth. Centered, balanced negative space. Flat, vector-style, no gradients or text. Premium, calm, suitable for finance app.",
+
+    "concept_d_geometric_flow": "App icon, square. Background exactly #131313. One geometric flow symbol in #60A5FA: e.g. converging lines, upward triangle, or minimal path suggesting direction and flow. Single color, flat, no text. Clean edges, readable when scaled down. Modern fintech app icon."
+  },
+
+  "negative_prompt": "No text, no letters, no numbers, no words. No multiple colors on the logo. No gradients on the logo or background. No blur, no drop shadows, no 3D effects, no bevels. No busy patterns, no fine textures, no clutter. No white or light-colored background; background must be #131313. No cartoon style, no illustration style; keep it iconic and symbolic. No borders or frames around the icon.",
+  "negative_prompt_turkce": "Yazı, harf, rakam, kelime yok. Logo üzerinde birden fazla renk yok. Logo veya arka planda gradient yok. Bulanıklık, gölge, 3D, eğim yok. Karmaşık desen, ince doku, dağınık kompozisyon yok. Arka plan beyaz veya açık olmasın; #131313 olmalı. Karikatür veya illüstrasyon tarzı yok; ikonik ve sembolik kalsın. İkon etrafında çerçeve yok.",
+  "quality_checklist": [
+    "Arka plan tam ve düz #131313 mi?",
+    "Logo tek renk (#60A5FA) ve gradient/gölge yok mu?",
+    "Küçük boyutta (48×48) hâlâ okunaklı mı?",
+    "Kompozisyon merkezde ve dengeli mi?",
+    "Yazı veya harf var mı (olmamalı)?",
+    "Flat ve vektör hissi korunuyor mu?"
+  ],
+
+  "usage_notes": {
+    "chatgpt_dalle": "prompts.master_prompt_english veya concepts (concept_a_flow_line vb.) alanlarından birini kopyalayıp kullanın. İstediğiniz konsepte göre seçin.",
+    "post_production": "Üretilen görselde arka plan tam #131313 değilse, Figma/Photoshop vb. ile arka planı #131313 yapın; logo rengini gerekirse #60A5FA ile eşleştirin.",
+    "export": "1024×1024 veya 2048×2048 PNG (şeffaf değil; arka plan #131313 dolu). Flutter/Android/iOS için gerekli tüm çözünürlükleri bu master’dan türetin."
+  }
+}
