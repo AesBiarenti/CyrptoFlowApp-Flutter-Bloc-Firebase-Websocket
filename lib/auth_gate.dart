@@ -1,4 +1,4 @@
-import 'package:cyrpto_flow_app/home_page.dart';
+import 'package:cyrpto_flow_app/screens/home_flow.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
@@ -24,21 +24,29 @@ class AuthGate extends StatelessWidget {
             ],
             headerBuilder: (context, constraints, shrinkOffset) {
               return Padding(
-                padding: EdgeInsets.all(20),
-                child: Text("Uygulamaya Hoş Geldiniz"),
+                padding: const EdgeInsets.all(20),
+                child: Text(
+                  "Uygulamaya Hoş Geldiniz",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
               );
             },
             subtitleBuilder: (context, action) {
               return Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
-                child: action == AuthAction.signIn
-                    ? const Text("Lütfen Oturum aç")
-                    : const Text("Lütfen Kaydol"),
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Text(
+                  action == AuthAction.signIn
+                      ? "Lütfen Oturum aç"
+                      : "Lütfen Kaydol",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                ),
               );
             },
           );
         }
-        return const HomeScreen();
+        return const HomeFlow();
       },
     );
   }
