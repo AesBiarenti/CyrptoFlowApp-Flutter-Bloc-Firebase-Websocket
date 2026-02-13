@@ -1,3 +1,4 @@
+import 'package:cyrpto_flow_app/screens/auth_screen.dart';
 import 'package:cyrpto_flow_app/widgets/app_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,15 @@ class ProfileScreen extends StatelessWidget {
               ],
               const SizedBox(height: 32),
               AppButton(
-                onPressed: () => FirebaseAuth.instance.signOut(),
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+                  if (context.mounted) {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (_) => const AuthScreen()),
+                      (route) => false,
+                    );
+                  }
+                },
                 icon: Icons.logout_rounded,
                 label: 'Çıkış Yap',
               ),
