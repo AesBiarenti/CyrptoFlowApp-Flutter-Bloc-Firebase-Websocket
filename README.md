@@ -2,15 +2,27 @@
 
 A new Flutter project.
 
-## Firebase setup (required before run)
+## Kurulum (ilk çalıştırmadan önce)
 
-Config files with API keys are not committed. Generate them locally:
+### 1. Firebase
+
+Config dosyaları repoda yok. Lokal üretmek için:
 
 ```bash
 dart run flutterfire configure
 ```
 
-This creates `lib/firebase_options.dart` and updates `android/app/google-services.json`.
+Bu komut `lib/firebase_options.dart` ve `android/app/google-services.json` oluşturur.
+
+### 2. Google Client ID (.env)
+
+`.env.example` dosyasını `.env` olarak kopyalayıp Google Web Client ID’nizi yazın:
+
+```bash
+cp .env.example .env
+```
+
+`.env` içinde `GOOGLE_CLIENT_ID` değerini doldurun (Firebase Console → Authentication → Sign-in method → Google → Web SDK configuration).
 
 ## Getting Started
 
