@@ -3,6 +3,7 @@ import 'package:cyrpto_flow_app/cubit/watchlist_cubit.dart';
 import 'package:cyrpto_flow_app/screens/coin_list_screen.dart';
 import 'package:cyrpto_flow_app/screens/profile_screen.dart';
 import 'package:cyrpto_flow_app/screens/watchlist_screen.dart';
+import 'package:cyrpto_flow_app/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,23 +33,9 @@ class _HomeFlowState extends State<HomeFlow> {
             ProfileScreen(),
           ],
         ),
-        bottomNavigationBar: NavigationBar(
+        bottomNavigationBar: CustomBottomBar(
           selectedIndex: _currentIndex,
-          onDestinationSelected: (i) => setState(() => _currentIndex = i),
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.list),
-              label: 'Coinler',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.star),
-              label: 'Takip',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.person),
-              label: 'Profil',
-            ),
-          ],
+          onTap: (i) => setState(() => _currentIndex = i),
         ),
       ),
     );
