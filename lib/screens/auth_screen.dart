@@ -30,36 +30,76 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     final googleClientId = dotenv.env['GOOGLE_CLIENT_ID'] ?? '';
+    final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: AppTheme.backgroundPrimary,
-      body: SignInScreen(
-        providers: [
-          EmailAuthProvider(),
-          if (googleClientId.isNotEmpty)
-            GoogleProvider(clientId: googleClientId),
-        ],
-        headerBuilder: (context, constraints, shrinkOffset) {
-          return Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              'Uygulamaya Hoş Geldiniz',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          );
-        },
-        subtitleBuilder: (context, action) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Text(
-              action == AuthAction.signIn
-                  ? 'Lütfen Oturum aç'
-                  : 'Lütfen Kaydol',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+      body: SafeArea(
+        child: SignInScreen(
+          providers: [
+            EmailAuthProvider(),
+            if (googleClientId.isNotEmpty)
+              GoogleProvider(clientId: googleClientId),
+          ],
+          styles: {
+            EmailFormStyle(
+              signInButtonVariant: ButtonVariant.filled,
+              inputDecorationTheme: InputDecorationTheme(
+                filled: true,
+                fillColor: AppTheme.surface,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(
+                    color: AppTheme.onSurfaceVariant.withValues(alpha: 0.3),
                   ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide(
+                    color: AppTheme.onSurfaceVariant.withValues(alpha: 0.3),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: AppTheme.primary,
+                    width: 1.5,
+                  ),
+                ),
+                labelStyle: theme.textTheme.bodyMedium?.copyWith(
+                  color: AppTheme.onSurfaceVariant,
+                ),
+                hintStyle: theme.textTheme.bodyMedium?.copyWith(
+                  color: AppTheme.onSurfaceVariant.withValues(alpha: 0.7),
+                ),
+              ),
             ),
-          );
-        },
+          },
+          headerBuilder: (context, constraints, shrinkOffset) {
+            return Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                'Uygulamaya Hoş Geldiniz',
+                style: theme.textTheme.headlineMedium?.copyWith(
+                  color: AppTheme.onSurface,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            );
+          },
+          subtitleBuilder: (context, action) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: Text(
+                action == AuthAction.signIn
+                    ? 'Lütfen Oturum aç'
+                    : 'Lütfen Kaydol',
+                style: theme.textTheme.bodyLarge?.copyWith(
+                      color: AppTheme.onSurfaceVariant,
+                    ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
