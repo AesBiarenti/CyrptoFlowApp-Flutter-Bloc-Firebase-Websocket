@@ -21,8 +21,11 @@ class WatchlistRepository {
   }
 
   /// Stream of watchlist coin UUIDs for the current user.
+  /// Returns empty stream when not signed in; swallows permission errors on sign-out.
   Stream<List<String>> watchlistIdsStream() {
-    return _userDoc().snapshots().map((snap) {
+    final uid = _auth.currentUser?.uid;
+    if (uid == null) return Stream.value(<String>[]);
+    return _users.doc(uid).snapshots().map((snap) {
       if (!snap.exists) return <String>[];
       final data = snap.data();
       final list = data?['watchlistIds'];

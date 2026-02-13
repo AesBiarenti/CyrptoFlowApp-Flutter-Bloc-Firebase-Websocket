@@ -12,7 +12,10 @@ class WatchlistCubit extends Cubit<WatchlistState> {
   })  : _repository = repository ?? WatchlistRepository(),
         _service = service ?? CoinRankingService(),
         super(WatchlistState.initial()) {
-    _subscription = _repository.watchlistIdsStream().listen(_onIdsUpdated);
+    _subscription = _repository.watchlistIdsStream().listen(
+      _onIdsUpdated,
+      onError: (_, __) => _onIdsUpdated([]),
+    );
   }
 
   final WatchlistRepository _repository;
