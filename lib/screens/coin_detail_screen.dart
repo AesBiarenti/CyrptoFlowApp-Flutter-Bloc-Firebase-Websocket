@@ -1,6 +1,7 @@
 import 'package:cyrpto_flow_app/core/theme/app_theme.dart';
 import 'package:cyrpto_flow_app/cubit/coin_detail_cubit.dart';
 import 'package:cyrpto_flow_app/cubit/watchlist_cubit.dart';
+import 'package:cyrpto_flow_app/widgets/app_button.dart';
 import 'package:cyrpto_flow_app/widgets/coin_icon.dart';
 import 'package:cyrpto_flow_app/widgets/price_chart.dart';
 import 'package:flutter/material.dart';
@@ -58,9 +59,9 @@ class _CoinDetailScreenState extends State<CoinDetailScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(state.error!),
-                  FilledButton(
+                  AppButton(
                     onPressed: () => context.read<CoinDetailCubit>().loadFull(widget.coinUuid, timePeriod: _selectedPeriod),
-                    child: const Text('Tekrar Dene'),
+                    label: 'Tekrar Dene',
                   ),
                 ],
               ),

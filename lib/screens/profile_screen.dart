@@ -1,3 +1,4 @@
+import 'package:cyrpto_flow_app/widgets/app_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -47,10 +48,10 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
               const SizedBox(height: 32),
-              FilledButton.icon(
+              AppButton(
                 onPressed: () => FirebaseAuth.instance.signOut(),
-                icon: const Icon(Icons.logout),
-                label: const Text('Çıkış Yap'),
+                icon: Icons.logout_rounded,
+                label: 'Çıkış Yap',
               ),
             ],
           ),

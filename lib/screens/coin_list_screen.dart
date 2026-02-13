@@ -2,6 +2,7 @@ import 'package:cyrpto_flow_app/cubit/coin_detail_cubit.dart';
 import 'package:cyrpto_flow_app/cubit/coins_cubit.dart';
 import 'package:cyrpto_flow_app/cubit/watchlist_cubit.dart';
 import 'package:cyrpto_flow_app/screens/coin_detail_screen.dart';
+import 'package:cyrpto_flow_app/widgets/app_button.dart';
 import 'package:cyrpto_flow_app/widgets/coin_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,9 +28,9 @@ class CoinListScreen extends StatelessWidget {
                 children: [
                   Text(state.error!, textAlign: TextAlign.center),
                   const SizedBox(height: 16),
-                  FilledButton(
+                  AppButton(
                     onPressed: () => context.read<CoinsCubit>().refresh(),
-                    child: const Text('Tekrar Dene'),
+                    label: 'Tekrar Dene',
                   ),
                 ],
               ),
