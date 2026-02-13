@@ -1,6 +1,7 @@
 import 'package:cyrpto_flow_app/core/theme/app_theme.dart';
 import 'package:cyrpto_flow_app/screens/auth_screen.dart';
 import 'package:cyrpto_flow_app/screens/home_flow.dart';
+import 'package:cyrpto_flow_app/widgets/app_logo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -44,6 +45,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const AppLogo(height: 80),
+            const SizedBox(height: 16),
             Text(
               'Crypto Flow',
               style: theme.textTheme.headlineMedium?.copyWith(
@@ -52,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 letterSpacing: -0.5,
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             Container(
               width: 4,
               height: 4,

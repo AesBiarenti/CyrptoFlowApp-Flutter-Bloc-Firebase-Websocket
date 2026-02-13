@@ -1,5 +1,6 @@
 import 'package:cyrpto_flow_app/core/theme/app_theme.dart';
 import 'package:cyrpto_flow_app/screens/home_flow.dart';
+import 'package:cyrpto_flow_app/widgets/app_logo.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart';
@@ -77,12 +78,19 @@ class _AuthScreenState extends State<AuthScreen> {
           headerBuilder: (context, constraints, shrinkOffset) {
             return Padding(
               padding: const EdgeInsets.all(20),
-              child: Text(
-                'Uygulamaya Hoş Geldiniz',
-                style: theme.textTheme.headlineMedium?.copyWith(
-                  color: AppTheme.onSurface,
-                  fontWeight: FontWeight.w600,
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const AppLogo(height: 48),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Uygulamaya Hoş Geldiniz',
+                    style: theme.textTheme.headlineMedium?.copyWith(
+                      color: AppTheme.onSurface,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
             );
           },
